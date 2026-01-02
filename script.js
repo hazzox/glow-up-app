@@ -1,11 +1,12 @@
-function verProgreso() {
-  const checks = document.querySelectorAll("input[type='checkbox']");
-  let completados = 0;
+const frases = [
+  "Tú puedes con todo 💪",
+  "Hoy es un gran día 🌞",
+  "Confía en ti ✨",
+  "Eres increíble 🔥",
+  "Sigue brillando 💖"
+];
 
-  checks.forEach(c => {
-    if (c.checked) completados++;
-  });
-
-  document.getElementById("resultado").innerText =
-    "Completaste " + completados + " hábitos hoy ✨";
-}
+document.getElementById("boton").addEventListener("click", () => {
+  const random = Math.floor(Math.random() * frases.length);
+  document.getElementById("resultado").textContent = frases[random];
+});
